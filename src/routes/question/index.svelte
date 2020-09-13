@@ -5,20 +5,26 @@
       `http://lit-cliffs-44994.herokuapp.com/question`
     );
     const latestQuestions = await res.json();
-    console.log(latestQuestions);
     return { latestQuestions };
   }
 </script>
 
 <script>
+  import QuestionItem from "../../components/QuestionItem.svelte";
+
   export let latestQuestions;
 </script>
+
+<style>
+</style>
 
 <svelte:head>
   <title>Questions</title>
 </svelte:head>
 
-<h1>{latestQuestions.total}</h1>
-{#each latestQuestions.questions as question}
-  <li>{question.text}</li>
-{/each}
+<h1>Recent questions</h1>
+<div class="list-container">
+  {#each latestQuestions.questions as question}
+    <QuestionItem class="question" {question} />
+  {/each}
+</div>

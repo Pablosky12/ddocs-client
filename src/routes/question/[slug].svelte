@@ -1,5 +1,6 @@
 <script context="module">
   export async function preload(page, session) {
+    console.log('hello')
     const { slug } = page.params;
     const res = await this.fetch(
       `http://lit-cliffs-44994.herokuapp.com/question/${slug}`
