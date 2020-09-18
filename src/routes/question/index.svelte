@@ -2,7 +2,7 @@
   export async function preload(page, session) {
     const { slug } = page.params;
     const res = await this.fetch(
-      `http://lit-cliffs-44994.herokuapp.com/question`
+      `http://localhost:3002/question/latest`
     );
     const latestQuestions = await res.json();
     return { latestQuestions };
@@ -13,6 +13,7 @@
   import QuestionItem from "../../components/QuestionItem.svelte";
 
   export let latestQuestions;
+  console.log(latestQuestions);
 </script>
 
 <style>
@@ -22,9 +23,10 @@
   <title>Questions</title>
 </svelte:head>
 
+<p>Users have asked {latestQuestions.total} questions so far!</p>
 <h1>Recent questions</h1>
 <div class="list-container">
   {#each latestQuestions.questions as question}
-    <QuestionItem class="question" {question} />
+    <QuestionItem {question} />
   {/each}
 </div>
