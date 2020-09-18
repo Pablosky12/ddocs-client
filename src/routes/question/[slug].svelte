@@ -3,7 +3,7 @@
     console.log("hello");
     const { slug } = page.params;
     const res = await this.fetch(
-      `http://localhost:3002/question/${slug}`
+      `http://lit-cliffs-44994.herokuapp.com/question/${slug}`
     );
     const question = await res.json();
     console.log(question);

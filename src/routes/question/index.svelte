@@ -2,7 +2,7 @@
   export async function preload(page, session) {
     const { slug } = page.params;
     const res = await this.fetch(
-      `http://localhost:3002/question/latest`
+      `http://lit-cliffs-44994.herokuapp.com/question/latest`
     );
     const latestQuestions = await res.json();
     return { latestQuestions };
