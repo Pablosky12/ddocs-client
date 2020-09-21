@@ -8,11 +8,17 @@
     }
   li {
     padding: 0;
-    border: 1px solid #00000016;
-    border-radius: 5px;
+    border: 1px solid #aeaeae;
     list-style: none;
-    box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.2);
-    margin: 10px 0;
+    border-top: none;
+    background-color: white;
+    /* box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.2); */
+  }
+  li:first-of-type {
+    border-top: 1px solid #aeaeae;
+  }
+  li:last-of-type {
+    margin-bottom: 30px;
   }
 
   li a {
